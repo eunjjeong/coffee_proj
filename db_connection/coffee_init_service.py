@@ -98,6 +98,7 @@ class DBInitService:
         try:
             conn = ExplicitlyConnectionPool.get_instance().get_connection()
             cursor = conn.cursor()
+            cursor.execute("USE {}".format(self._db['database_name']))
             source_path = self.source_dir + filename
             if os.path.exists(source_path):
                 os.remove(source_path)

@@ -31,8 +31,8 @@ class WidgetCoffeeSetting(QWidget):
         QMessageBox.about(self, "RESET", "초기화되었습니다.")
 
     def backup(self):
-        self.db.data_backup("sale")
         self.db.data_backup("product")
+        self.db.data_backup("sale")
         QMessageBox.about(self, "BACKUP", "백업되었습니다.")
 
     def restore(self):
